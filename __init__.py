@@ -1,23 +1,35 @@
 import check50
 import check50.c
+import os.path
+from os import path
 
 
 @check50.check()
 def q1_compiles():
     """q1 compiles"""
-    check50.c.compile("q1.c")
+    if path.exists("794901.c"):
+        check50.c.compile("794901.c")
+    elif path.exists("794904.c"):
+        check50.c.compile("794904.c")
+    else:
+        raise FileNotFoundError
 
 
 @check50.check()
 def q2_compiles():
     """q2 compiles"""
-    check50.c.compile("q2.c")
+    if path.exists("794902.c"):
+        check50.c.compile("794902.c")
+    elif path.exists("794907.c"):
+        check50.c.compile("794907.c")
+    else:
+        raise FileNotFoundError
 
 
 @check50.check()
 def q3_compiles():
     """q3 compiles"""
-    check50.c.compile("q3.c")
+    check50.c.compile("788765.c")
 
 
 @check50.check(q1_compiles)
